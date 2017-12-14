@@ -1,5 +1,5 @@
 # core-cms
-基于vue2 + axios + vue-router + vuex + vee-validate + jsdoc + mockjs + 测试 + 日志 +  的基础cms
+基于vue2 + axios + vue-router + vuex + vee-validate + jsdoc + mockjs + 测试 + 日志 +等的基础cms
 
 ### 目录结构
 
