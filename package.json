@@ -1,0 +1,22 @@
+{
+  "name": "core-cms",
+  "version": "1.0.0",
+  "description": "基于vue2 + axios + vue-router + vuex + vee-validate + jsdoc + mockjs + 测试 + 日志 +等的基础cms",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikewu/core-cms.git"
+  },
+  "author": "HYZ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikewu/core-cms/issues"
+  },
+  "homepage": "https://github.com/nikewu/core-cms#readme"
+}
