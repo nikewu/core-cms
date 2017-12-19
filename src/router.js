@@ -6,16 +6,16 @@ const router = new Router({
   routes: [{
     path: '/',
     meta: { auth: true },
-    component: resolve => require(['../views/main'], resolve),
+    component: resolve => require(['./views/main'], resolve),
     children: [{
       path: '/',
       meta: { nav: 'home|index' },
-      component: resolve => require(['../views/home/index'], resolve)
+      component: resolve => require(['./views/home/index'], resolve)
     }]
   }, {
     path: '/login',
     meta: { auth: false },
-    component: resolve => require(['../views/login'], resolve)
+    component: resolve => require(['./views/login/index'], resolve)
   }]
 });
 // router.beforeEach((to, from, next) => {

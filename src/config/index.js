@@ -1,8 +1,8 @@
 const dev = {
-    apiRoot: 'http://backend.api.shushujia.net'
+    apiRoot: 'http://xxxx'
 };
 const prod = {
-    apiRoot: 'http://backend.api.shushujia.me'
+    apiRoot: 'http://xxxx'
 };
 console.log(process.env.NODE_ENV);
 export default {

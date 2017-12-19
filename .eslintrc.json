@@ -1,0 +1,38 @@
+{
+    "root": true,
+    "env": {
+      "browser": true
+    },
+    "globals": {
+      "locals": true,
+      "_": true
+    },
+    "extends": "xo-space",
+    "plugins": [
+      "html"
+    ],
+    "settings": {
+      "html/html-extensions": [".html", ".vue"]
+    },
+    "rules": {
+      "indent": "off",
+      "eol-last": "off",
+      "quote-props": "off",
+      "capitalized-comments": "off",
+      "eqeqeq": "off",
+      "camelcase": "off",
+      "no-var": "off",
+      "object-shorthand": "off",
+      "space-before-function-paren": "off",
+      "no-negated-condition": "off",
+      "object-curly-spacing": "off",
+      "no-new": "off",
+      "no-lonely-if": "off",
+      "no-alert": "off",
+      "max-params": ["error", 10],
+      "no-unused-expressions": "off",
+      "no-constant-condition": ["error", { "checkLoops": false }],
+      "no-unused-vars": ["error", { "args": "none" }],
+      "linebreak-style": "off"
+    }
+  }

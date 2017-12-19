@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <div class="navbar-brand">叔叔家电商</div>
+    <div class="navbar-brand">core-cms</div>
     <ul class="navbar-nav">
       <!-- <li :class="{active:uikit.menu.nav=='home'}"> -->
       <li>
@@ -14,8 +14,8 @@
   </div>
 </template>
 <script>
-  import './index.less';
-  const roles = ['超级管理员', '会员'];
+  import './index.css';
+  // const roles = ['超级管理员', '会员'];
   export default {
     name: 'navbar',
     data() {

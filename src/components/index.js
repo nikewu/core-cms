@@ -1,9 +1,11 @@
+import Vue from 'vue';
 import navbar from './navbar';
-import sidebar from './sideba';
+// import sidebar from './sideba';
 const components = [
-    navbar,
-    sidebar
+    navbar
+    // sidebar
 ];
-export default {
-    components: components
-};
+components.map(component => {
+  Vue.component(component.name, component);
+  return component;
+});

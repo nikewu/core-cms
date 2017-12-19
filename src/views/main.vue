@@ -1,7 +1,7 @@
 <template>
   <div class="content-wrap">
     <navbar></navbar>
-    <sidebar></sidebar>
+    <!-- <sidebar></sidebar> -->
     <div>
       <transition name="fade" mode="out-in">
         <router-view></router-view>
@@ -11,7 +11,6 @@
 </template>
 <script>
   export default {
-    name: 'main',
     data() {
       return {
 
