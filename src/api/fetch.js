@@ -1,11 +1,11 @@
-import axios from  'axios';
+import axios from 'axios';
 import qs from 'qs';
-import config from './config';
+import config from '../config';
 
-const instance  = axios.create();
+const instance = axios.create();
 
 instance.defaults.timeout = 8000;
-instance.defaults.headers = ['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'; // 配置请求头
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'; // 配置请求头
 instance.defaults.baseURL = config.env.apiRoot;
 
 /**
@@ -39,5 +39,4 @@ instance.interceptors.response.use(response => {
   }, error => {
     return Promise.reject(error);
   });
-  
   export default instance;
