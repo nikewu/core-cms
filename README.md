@@ -13,7 +13,7 @@
 │   ├── assets               // css 和图片资源
 │   ├── components           // 公共组件
 │   ├── mixins               // 工具函数
-│   └── store            		 // vuex相关文件,处理全局状态数据
+│   └── store                // vuex相关文件,处理全局状态数据
 │   └── config               // api url, cookie domain等配置文件
 │   └── vendors              // 第三方插件
 │   └── views                // 业务页面
