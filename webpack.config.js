@@ -99,7 +99,7 @@ const config = {
     historyApiFallback: true,
     inline: true,
     hot: true,
-    port: 8080
+    port: 11803
   },
   plugins: [
     new webpack.DefinePlugin({

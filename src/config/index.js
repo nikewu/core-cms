@@ -1,8 +1,10 @@
 const dev = {
-    apiRoot: 'http://xxxx'
+    apiRoot: 'http://xxxx',
+    CookieDomain: 'http://localhost:11803/'
 };
 const prod = {
-    apiRoot: 'http://xxxx'
+    apiRoot: 'http://xxxx',
+    CookieDomain: 'xxxxxxxxx'
 };
 console.log(process.env.NODE_ENV);
 export default {

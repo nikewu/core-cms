@@ -1,25 +1,20 @@
-import fetch from '../api/fetch';
-import md5 from '../libs/md5.js';
-import store from '../store';
-const auth = {
-    login({username, password, ismd5 = false}) {
-        return new Promise((resolve, reject) => {
-            fetch.post('/user/login', {
-                params: {
-                    username: username,
-                    password: ismd5 ? password : md5(password)
-                }
-            }).then(json => {
-                // 用户名 职位 token
-                store.dispatch('signin', json.data);
-                resolve();
-            }).catch(err => {
-                reject(err);
-            });
-        });
-    },
-    isLogin() {
-        return Boolean(store.state.user.username);
-    }
-};
-export default auth;
+import Cookies from 'universal-cookie';
+import env from '../config';
+const cookies = new Cookies();
+let cookieConfig = {};
+if (env.CookieDomain !== '') {
+    cookieConfig = { domain: env.CookieDomain, maxAge: 60 * 60 };// path:'/',
+}
+export function saveCookie(name, value) {
+    cookies.remove(name, cookieConfig);
+    cookies.set(name, value, cookieConfig);
+}
+export function getCookie(name) {
+    return cookies.get(name);
+}
+export function signOut() {
+    cookies.remove('token', cookieConfig);
+}
+export function isLogin() {
+    return Boolean(cookies.get('token'));
+}

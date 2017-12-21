@@ -1,29 +1,71 @@
-import Vue from 'vue';
-
+// import fetch from '../api/fetch';
+import { getCookie, saveCookie, signOut } from '../utils/auth';
+import router from '../router';
 export default {
-  state: JSON.parse(sessionStorage.getItem('user')) || {},
+  state: {
+    token: getCookie('token') || null,
+    user: getCookie('user') || null
+  },
   getters: {
     roleType: state => {
       const roleArray = ['NULL', 'ADMIN', 'MERCHANT', 'SHIPPER'];
-      return roleArray[state.role];
+      if (state.user) {
+        return roleArray[state.user.role];
+      }
+      return null;
     }
   },
   mutations: {
-    signin(state, user) {
-      sessionStorage.setItem('user', JSON.stringify(user));
-      Object.keys(user).forEach(k => Vue.set(state, k, user[k]));
+    loginin(state, user) {
+      const json = {
+        data: {
+          user: {
+            nikename: 'hyz',
+            role: 1
+          },
+          token: 'xxxxxxxxx'
+        },
+        ok: true
+      };
+      state.token = json.data.token;
+      state.user = json.data.user;
+      saveCookie('token', state.token);
+      saveCookie('user', state.user);
+      router.push({path: '/'});
+      // return new Promise((resolve, reject) => {
+      //   fetch.get('/sysUsers/login/', {
+      //     params: {
+      //       username: user.username,
+      //       password: user.password
+      //     }
+      //   }).then(json => {
+      //     if (!json.ok) {
+      //       // return showMsg(store,response.data.error_msg || '登录失败')
+      //     }
+      //     state.token = json.data.token;
+      //     state.user = json.data.user;
+      //     saveCookie('token', state.token);
+      //     saveCookie('user', state.user);
+      //     router.push({path: '/'});
+      //   }).catch(err => {
+      //    console.log(err);
+      //   //  showMsg(store,response.data.error_msg || '登录失败')
+      //   });
+      // });
     },
-    signout(state) {
-      sessionStorage.removeItem('user');
-      Object.keys(state).forEach(k => Vue.delete(state, k));
+    loginout(state) {
+      state.user = null;
+      state.token = null;
     }
   },
   actions: {
-    signin({ commit }, user) {
-      commit('signin', user);
+   loginin({ commit }, user) {
+      commit('loginin', user);
     },
-    signout({ commit }) {
-      commit('signout');
+   loginout({ commit }) {
+      signOut();
+      commit('loginout');
+      window.location.pathname = '/';
     }
   }
 };

@@ -9,7 +9,7 @@
             };
         },
         created() {
-
+            console.log(this);
         },
         methods: {
 

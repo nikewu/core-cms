@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import auth from './utils/auth';
+import { isLogin } from './utils/auth';
 Vue.use(Router);
 const router = new Router({
   mode: 'history',
@@ -20,10 +20,8 @@ const router = new Router({
   }]
 });
 router.beforeEach((to, from, next) => {
-  // const menu = to.meta.nav ? to.meta.nav.split('|')[0] : '';
-  // var { auth = true } = to.meta;
   if (to.matched.some(record => record.meta.auth)) {
-    if (!auth.isLogin()) {
+    if (!isLogin()) {
       next({path: '/login'});
     } else {
       next();

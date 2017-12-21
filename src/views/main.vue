@@ -2,7 +2,7 @@
   <div class="content-wrap">
     <navbar></navbar>
     <!-- <sidebar></sidebar> -->
-    <div>
+    <div class="">
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
