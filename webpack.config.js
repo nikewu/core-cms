@@ -34,7 +34,7 @@ const config = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','.css','.scss'],
     alias: {
       '@': resolve('src')
     }
@@ -61,7 +61,14 @@ const config = {
               options: cssLoaderOptions
             }],
             fallback: 'vue-style-loader'
-          })
+          }),
+          sass:ExtractTextPlugin.extract({
+            use: [{
+              loader: 'css-loader',
+              options: cssLoaderOptions
+            },'sass-loader'],
+            fallback: 'vue-style-loader'
+          }),
         }
       }
     }, {
@@ -78,6 +85,15 @@ const config = {
         }]
       })
     }, {
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [{
+          loader: 'css-loader',
+          options: cssLoaderOptions
+        },'sass-loader']
+      })
+    },{
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       loader: 'url-loader',
       options: {

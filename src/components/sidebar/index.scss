@@ -1,0 +1,26 @@
+.sidebar {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(68, 65, 65);
+    width: 10rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .05), 0 1px 0 rgba(0, 0, 0, .05);
+}
+.sidebar-nav{
+    display: flex;
+    flex-flow: column;
+    li {
+        padding: 10px 20px;
+        cursor: pointer;
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            color:#fff;
+        }
+    }
+    .sidebar-nav__active {
+        background-color: rgb(29, 27, 27);
+    }
+}

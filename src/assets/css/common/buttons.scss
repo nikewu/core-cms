@@ -1,0 +1,87 @@
+.btn {
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: $primary-color;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    color: $font-color-2;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    transition: all 0.2s ease-out;
+    box-sizing: border-box;
+    border: none;
+    &:hover {
+        background-color: darken($primary-color,5%);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+}
+
+.btn-lg {
+    @extend .btn;
+    font-size: 20px;
+}
+
+.btn-sm {
+    @extend .btn;
+    font-size: 12px;
+}
+
+.btn-warn {
+    @extend .btn;
+    background-color: $warn-color;
+
+    &:hover {
+        background-color: darken($warn-color,10%);
+    }
+}
+
+.btn-warn-lg {
+    @extend .btn-warn;
+    font-size: 20px;
+}
+
+.btn-warn-sm {
+    @extend .btn-warn;
+    font-size: 12px;
+}
+
+.btn-error {
+    @extend .btn;
+    background-color: $error-color;
+
+    &:hover {
+        background-color: darken($error-color,10%);
+    }
+}
+
+.btn-error-lg {
+    @extend .btn-error;
+    font-size: 20px;
+}
+
+.btn-error-sm {
+    @extend .btn-error;
+    font-size: 12px;
+}
+
+.btn-disabled {
+    cursor: not-allowed;
+    background-color: $disabled-color;
+
+    &:hover {
+        background-color: $disabled-color;
+        box-shadow: none;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
+}
+.btn-auto {
+    width: 100%;
+}

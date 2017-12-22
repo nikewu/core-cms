@@ -2,40 +2,35 @@
   <div class="navbar">
     <div class="navbar-brand">core-cms</div>
     <ul class="navbar-nav">
-      <!-- <li :class="{active:uikit.menu.nav=='home'}"> -->
-      <li>
+      <li  :class="nav == 'home'?'navbar-nav__active':''">
         <router-link  to="/">
-          1
-          <!-- <span v-if="roleType == 'ADMIN'">管理中心</span>
-          <span v-if="roleType == 'MEMBER'">会员中心</span> -->
+          首页
+        </router-link>
+      </li>
+       <li :class="nav == 'user'?'navbar-nav__active':''">
+        <router-link  to="/user/list">
+          用户中心
         </router-link>
       </li>
     </ul>
   </div>
 </template>
 <script>
-  import './index.css';
-  // const roles = ['超级管理员', '会员'];
+  import './index.scss';
   export default {
     name: 'navbar',
-    data() {
-      return {};
+    computed: {
+      nav() {
+        return this.$store.getters.navbar.nav;
+      }
+    },
+    methods: {
+      signout() {
+        this.$store.dispatch('loginOut');
+        this.$router.push({
+          path: '/login'
+        });
+      }
     }
-    // computed: {
-    //   roleName() {
-    //     return roles[this.$store.state.user.role] || '未知';
-    //   },
-    //   roleType() {
-    //     return this.$store.getters.roleType;
-    //   }
-    // },
-    // methods: {
-    //   signout() {
-    //     this.$router.push({
-    //       path: '/login'
-    //     });
-    //     this.$store.dispatch('signout', {});
-    //   }
-    // }
   };
 </script>

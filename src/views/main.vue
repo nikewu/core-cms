@@ -1,8 +1,13 @@
+<style scoped>
+.main-container{
+  padding:  3rem 0 0 10rem;
+}
+</style>
 <template>
-  <div class="content-wrap">
+  <div>
     <navbar></navbar>
-    <!-- <sidebar></sidebar> -->
-    <div class="">
+    <sidebar></sidebar>
+    <div class="main-container">
       <transition name="fade" mode="out-in">
         <router-view></router-view>
       </transition>

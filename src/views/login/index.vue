@@ -2,90 +2,32 @@
 .signin-box {
     width: 100%;
     margin: 0 auto;
-    padding: 60px 10px 10px;
+    padding: 5rem 1rem 1rem;
 }
 .signin-container{
   box-sizing: border-box;
 }
 .sign-title{
-    margin: 25px auto;
+    margin: 2rem auto 0 auto;
     text-align: center;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 .sign-from-container{
     box-sizing: border-box;
 }
 .signin-form{
-    max-width: 300px;
-    padding-bottom: 40px;
-    margin: 0 auto 25px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: #d9d9d9;
+    max-width: 20rem;
+    padding-bottom: 2rem;
+    margin: 0 auto 2rem;
+    box-sizing: border-box;
 }
-.form-horizontal{
-
+.core-textfield.primary input.valid {
+    color:#93dad6;
 }
-.form-group{
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 15px;
-}
-.input-group{
-  position: relative;
-    display: flex;
-    border-collapse: separate;
-}
-.form-control {
-    position: relative;
-    z-index: 2;
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
-    height: 44px;
-    padding: 4px 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.btn{
-   width: 100%;
-   display: block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-.btn-primary {
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-}
-.btn-lg{
-    padding: 10px 16px;
-    font-size: 18px;
-    line-height: 1.3333333;
-    border-radius: 6px;
- }
-.valid {
-    color: #0cf73f;
-}
-.invalid {
-    border-color:#ec0a0a;
-    color: #ec0a0a;
+.core-textfield.primary input.invalid {
+    color: #FB656E;
 }
 </style>
 <template>
@@ -95,17 +37,19 @@
       <div id="signinForm">
         <form class="signin-form form-horizontal" @submit.prevent="login()" novalidate>
           <div class="form-group">
-            <div class="input-group">
-              <input type="text" name="email" autocomplete="off"  v-model="user.email" v-validate="'required|email|min:3'" data-vv-delay="100" :class="{'form-control valid': true, 'invalid':errors.has('email')}" placeholder="邮箱" />
-            </div>
+                <div class="core-textfield primary">
+                    <input type="text" name="email" required v-model="user.email" v-validate="'required|email|min:3'" data-vv-delay="100" :class="{'form-control valid': true, 'invalid':errors.has('email')}"/>
+                    <label data-content="邮箱">邮箱</label>
+                </div>
           </div>
           <div class="form-group">
-            <div class="input-group">
-              <input type="password" name="password" autocomplete="off" v-model="user.password" v-validate="'required|min:6'" :class="{'form-control valid': true, 'invalid':errors.has('password')}"  placeholder="密码" />
-            </div>
+              <div class="core-textfield primary">
+                    <input type="password" name="password" required  autocomplete="off" v-model="user.password" v-validate="'required|min:6'" :class="{'form-control valid': true, 'invalid':errors.has('password')}"/>
+                    <label data-content="密码">密码</label>
+              </div>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary btn-lg" type="submit" id="signin_btn" :disabled="errors.any()" >登 录</button>
+            <button class="btn-lg btn-auto" type="submit" id="signin_btn" :disabled="errors.any()" >登 录</button>
           </div>
         </form>
       </div>
@@ -130,7 +74,7 @@ export default {
     login(scope) {
        this.$validator.validateAll().then(result => {
         if (result) {
-          this.$store.dispatch('loginin', this.user);
+          this.$store.dispatch('loginIn', this.user);
         }
       }).catch(err => {
         console.log(err);

@@ -16,7 +16,7 @@ export default {
     }
   },
   mutations: {
-    loginin(state, user) {
+    loginIn(state, user) {
       const json = {
         data: {
           user: {
@@ -53,18 +53,18 @@ export default {
       //   });
       // });
     },
-    loginout(state) {
+    loginOut(state) {
       state.user = null;
       state.token = null;
     }
   },
   actions: {
-   loginin({ commit }, user) {
-      commit('loginin', user);
+   loginIn({ commit }, user) {
+      commit('loginIn', user);
     },
-   loginout({ commit }) {
+   loginOut({ commit }) {
       signOut();
-      commit('loginout');
+      commit('loginOut');
       window.location.pathname = '/';
     }
   }
