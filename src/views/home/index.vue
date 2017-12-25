@@ -198,36 +198,16 @@ h3 {
     <div class="panel">
         <div class="container ">
                 <div class="item">
-                    <a class="btn-sm"  href="javascript:void(0);" @click="loading">全局加载</a>
-                </div>
-                <div class="item">
                     <a class="btn-sm"  href="javascript:void(0);">加载中<i class="core-loading-dot" ></i></a>
                 </div>           
         </div>
-    </div>
-    <!-- 全局加载 -->
-     <div   ref="coreLoading"  class="core-loading" style="display:none">
-            <div class="loading-bar-1"></div>
-            <div class="loading-bar-2"></div>
-            <div class="loading-bar-3"></div>
-            <div class="loading-bar-4"></div>
-            <div class="loading-bar-5"></div>
     </div>
 </div>
 </template>
 <script>
 export default {
-  data() {
-    return {};
-  },
-  created() {
-  },
-  methods: {
-      loading() {
-          this.$nextTick(function() {
-              this.$refs.coreLoading.style.display = 'block';
-          });
-      }
-  }
+    created() {
+        // this.loadingOn();
+    }
 };
 </script>

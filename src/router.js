@@ -26,7 +26,10 @@ const router = new Router({
     path: '/login',
     meta: { auth: false },
     component: resolve => require(['./views/login/index'], resolve)
-  }]
+  }, {
+    path: '*',
+    component: resolve => require(['./views/error/index'], resolve)
+}]
 });
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.auth)) {

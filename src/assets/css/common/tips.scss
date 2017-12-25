@@ -48,3 +48,16 @@
         top: 20px;
     }
 }
+  // 按钮loading
+  .core-loading-dot{
+    display:inline-block;
+    overflow:hidden;
+    height:1.25em;
+    margin-left: .2em;
+    &::after {
+       display: inline-table;
+       content: "\A.\A..\A...";
+       white-space: pre;
+       animation: spin4 2s steps(4) infinite;
+   }
+ }

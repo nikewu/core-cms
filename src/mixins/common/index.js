@@ -1,2 +1,3 @@
 import date from './date';
-export default Object.assign({}, date);
+import loading from './loading';
+export default Object.assign({}, date, loading);

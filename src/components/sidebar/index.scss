@@ -11,7 +11,8 @@
     display: flex;
     flex-flow: column;
     li {
-        padding: 10px 20px;
+        padding: 1rem 1.2rem;
+        box-sizing: border-box;
         cursor: pointer;
         a {
             width: 100%;

@@ -7,6 +7,7 @@
   <div>
     <navbar></navbar>
     <sidebar></sidebar>
+    <loading></loading>
     <div class="main-container">
       <transition name="fade" mode="out-in">
         <router-view></router-view>

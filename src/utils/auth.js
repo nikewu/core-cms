@@ -3,7 +3,7 @@ import env from '../config';
 const cookies = new Cookies();
 let cookieConfig = {};
 if (env.CookieDomain !== '') {
-    cookieConfig = { domain: env.CookieDomain, maxAge: 60 * 60 };// path:'/',
+    cookieConfig = { domain: env.CookieDomain, maxAge: 60 * 60 * 24 };// path:'/',
 }
 export function saveCookie(name, value) {
     cookies.remove(name, cookieConfig);
