@@ -21,6 +21,7 @@
   "homepage": "https://github.com/nikewu/core-cms#readme",
   "dependencies": {
     "axios": "^0.17.1",
+    "element-ui": "^2.0.10",
     "moment": "^2.19.4",
     "qs": "^6.5.1",
     "universal-cookie": "^2.1.2",

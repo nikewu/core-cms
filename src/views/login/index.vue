@@ -24,7 +24,7 @@
     box-sizing: border-box;
 }
 .core-textfield.primary input.valid {
-    color:#93dad6;
+    color:#409eff;;
 }
 .core-textfield.primary input.invalid {
     color: #FB656E;
