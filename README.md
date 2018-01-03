@@ -1,5 +1,5 @@
 # core-cms
-基于vue2 + axios + vue-router + vuex + vee-validate + jsdoc + mockjs + 测试 + 日志 +等的基础cms
+基于vue2 + axios + vue-router + vuex + vee-validate + element-ui + jsdoc + mockjs + 测试 + 日志 +等的基础cms
 
 ### 目录结构
 
@@ -30,7 +30,7 @@
 
 - [x] 结构搭建
 - [x] 权限管理
-- [ ] 公共组件
+- [x] 集成饿了组件
 - [ ] 集成七牛
 - [ ] 集成表格
 - [ ] 集成jsdoc
